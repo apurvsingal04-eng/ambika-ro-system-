@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AMBIKA RO SYSTEM"
+description = "A product showcase website for AMBIKA RO SYSTEM, a water purification company selling domestic, commercial, and industrial RO plants. The site displays product images with descriptions and includes location information."
+version = "1.0.0"
+id = "artifacts/ambika-ro-system"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22851
+
+[services.development]
+run = "pnpm --filter @workspace/ambika-ro-system run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ambika-ro-system", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ambika-ro-system/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22851"
+BASE_PATH = "/"
