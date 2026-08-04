@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Droplet, ShieldCheck, Wrench, Headphones, 
+  Droplet, ShieldCheck, Wrench,
   MapPin, Phone, Mail, ChevronRight, Menu, X
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 
 // Asset Imports
 import heroImg from '@assets/hero.jpg';
@@ -27,6 +26,17 @@ import marsGrey from '@assets/WhatsApp_Image_2025-08-09_at_21.29.59_c19d44ff_178
 import v5Grey from '@assets/WhatsApp_Image_2025-09-16_at_19.07.01_f4683566_1785820122057.jpg';
 import v5Rose from '@assets/WhatsApp_Image_2025-09-16_at_19.07.02_71fa1502_1785820122057.jpg';
 import v5Blue from '@assets/WhatsApp_Image_2025-09-16_at_19.07.02_e2f8b00c_1785820122057.jpg';
+
+// Aqua Nine Series
+import nineN901 from '@assets/WhatsApp_Image_2026-07-29_at_3.11.17_PM_(1)_1785820299805.jpeg';
+import nineCatalog from '@assets/WhatsApp_Image_2026-07-29_at_3.11.17_PM_1785820308560.jpeg';
+import nineN301 from '@assets/WhatsApp_Image_2026-07-29_at_3.11.18_PM_(1)_1785820308560.jpeg';
+import nineN302 from '@assets/WhatsApp_Image_2026-07-29_at_3.11.18_PM_1785820308560.jpeg';
+
+// Dolphin Series
+import dolphinGold from '@assets/WhatsApp_Image_2026-08-03_at_10.09.15_AM_1785820315792.jpeg';
+import dolphinMetallicMaroon from '@assets/WhatsApp_Image_2026-08-03_at_10.09.16_AM_(1)_1785820315793.jpeg';
+import dolphinMetallicBlack from '@assets/WhatsApp_Image_2026-08-03_at_10.09.16_AM_1785820322997.jpeg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -81,7 +91,7 @@ export default function Home() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            {['Home', 'About', 'Products', 'Why Us', 'Contact'].map((item) => (
+            {['Home', 'Products', 'Contact'].map((item) => (
               <button 
                 key={item}
                 onClick={() => scrollTo(item.toLowerCase().replace(' ', '-'))}
@@ -115,7 +125,7 @@ export default function Home() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg pt-24 px-6 md:hidden flex flex-col gap-6">
-          {['Home', 'About', 'Products', 'Why Us', 'Contact'].map((item) => (
+          {['Home', 'Products', 'Contact'].map((item) => (
             <button 
               key={item}
               onClick={() => scrollTo(item.toLowerCase().replace(' ', '-'))}
@@ -178,60 +188,6 @@ export default function Home() {
               </Button>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-24 bg-white relative">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              className="space-y-6"
-            >
-              <div className="inline-flex items-center gap-2 text-primary font-bold tracking-wider uppercase text-sm">
-                <span className="h-px w-8 bg-primary"></span>
-                About Ambika RO
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
-                Masters of Water Purification Technology
-              </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                At AMBIKA RO SYSTEM, we believe that pure water is the foundation of health and industry. For over a decade, we have been at the forefront of reverse osmosis technology, delivering systems that meet the most stringent quality standards.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Whether you need a compact purifier for your kitchen, a reliable system for your restaurant, or a high-capacity plant for your manufacturing facility, our engineering excellence ensures you get exactly what you need.
-              </p>
-              <div className="grid grid-cols-2 gap-6 pt-6 border-t border-slate-100">
-                <div>
-                  <div className="text-4xl font-extrabold text-primary mb-2">10+</div>
-                  <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Years Experience</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-extrabold text-primary mb-2">5k+</div>
-                  <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Installations</div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
-            >
-              <img src={industrial2} alt="Industrial Facility" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
-                <p className="text-white font-medium text-lg border-l-4 border-primary pl-4">
-                  "Setting the gold standard in water treatment solutions across sectors."
-                </p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
@@ -314,7 +270,7 @@ export default function Home() {
             </div>
 
             {/* Aqua V5 Series */}
-            <div>
+            <div className="mb-12">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
                 <span className="h-px w-6 bg-primary inline-block"></span>Aqua V5 Series
               </p>
@@ -323,6 +279,39 @@ export default function Home() {
                   { name: "Aqua V5 — Graphite", desc: "Next-gen purification with zinc, copper & alkaline technology. Smart digital panel.", img: v5Grey },
                   { name: "Aqua V5 — Rose", desc: "Premium rose cabinet with zinc, copper & alkaline enrichment. Elegant home companion.", img: v5Rose },
                   { name: "Aqua V5 — Sky Blue", desc: "Sky blue premium finish with advanced alkaline minerals. Next-level hydration at home.", img: v5Blue }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Aqua Nine Series */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Aqua Nine Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { name: "Aqua Nine N 901", desc: "Modern design with excellent graphics. Digital display, large 10-litre storage tank, heavy food-grade cabinet.", img: nineN901 },
+                  { name: "Aqua Nine N 301", desc: "White cabinet with geometric graphic panel. LED display, invisible screw design, easy service access.", img: nineN301 },
+                  { name: "Aqua Nine N 302", desc: "White cabinet with vibrant leaf-water graphic. LED display, attractive chrome tap, 10-litre tank.", img: nineN302 },
+                  { name: "Aqua Nine — Full Range", desc: "Available in 4 variants: N301, N302, N901, N902. Modern design with excellent graphics across all models.", img: nineCatalog }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Dolphin Series */}
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Dolphin Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  { name: "Dolphin Gold+", desc: "ISO 9001 certified. 9-litre compact RO system. Pure, healthy, safe & sweet drinking water with balanced minerals.", img: dolphinGold },
+                  { name: "Dolphin Metallic — Maroon", desc: "Nile certified reverse osmosis system. 100% pure water guarantee, quality water for quality life.", img: dolphinMetallicMaroon },
+                  { name: "Dolphin Metallic — Black", desc: "Built-in high capacity booster pump. Removes hardness & improves taste. Dust and insect proof body.", img: dolphinMetallicBlack }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
@@ -365,56 +354,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section id="why-us" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1">
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Why AMBIKA RO SYSTEM?</h2>
-                <p className="text-primary-foreground/80 text-lg mb-8">
-                  We don't just sell products; we deliver peace of mind. Our commitment to quality ensures your water is pure, safe, and reliable.
-                </p>
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto" onClick={() => scrollTo('contact')} data-testid="why-us-cta">
-                  Talk to an Expert
-                </Button>
-              </motion.div>
-            </div>
-            
-            <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
-              {[
-                { icon: ShieldCheck, title: "Pure Water Guarantee", desc: "Every drop meets strict WHO standards. Uncompromising quality." },
-                { icon: Wrench, title: "Advanced Technology", desc: "Latest reverse osmosis membranes and multi-stage filtration." },
-                { icon: MapPin, title: "Expert Installation", desc: "Professional setup by certified technicians with zero hassle." },
-                { icon: Headphones, title: "After-Sales Support", desc: "24/7 customer service and routine maintenance scheduling." }
-              ].map((feature, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Card className="bg-white/10 border-white/20 backdrop-blur-sm text-white h-full hover:bg-white/20 transition-colors">
-                    <CardContent className="p-6">
-                      <feature.icon className="h-10 w-10 mb-4 text-cyan-300" />
-                      <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                      <p className="text-white/70">{feature.desc}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
@@ -442,8 +381,8 @@ export default function Home() {
                     <h4 className="text-lg font-bold text-slate-900 mb-1">Our Location</h4>
                     <p className="text-slate-600 leading-relaxed">
                       AMBIKA RO SYSTEM<br />
-                      Opp. Shrinathji Complex, 150 Feet Ring Road,<br />
-                      Rajkot, Gujarat
+                      Opp. Swami Vivekanand Swimming Pool,<br />
+                      Pedak Road, Rajkot - 360003 (Gujarat)
                     </p>
                     <a 
                       href="https://maps.app.goo.gl/cm9ZTgpGCJ5xG2699" 
