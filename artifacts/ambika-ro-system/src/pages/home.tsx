@@ -9,12 +9,24 @@ import { Card, CardContent } from '@/components/ui/card';
 
 // Asset Imports
 import heroImg from '@assets/hero.jpg';
-import domestic1 from '@assets/domestic-1.jpg';
-import domestic2 from '@assets/domestic-2.jpg';
 import commercial1 from '@assets/commercial-1.jpg';
 import commercial2 from '@assets/commercial-2.jpg';
 import industrial1 from '@assets/industrial-1.jpg';
 import industrial2 from '@assets/industrial-2.jpg';
+
+// Real product images — Domestic
+import lexzonRed from '@assets/Gemini_Generated_Image_4knxny4knxny4knx_1785820122053.png';
+import lexzonBlue from '@assets/Gemini_Generated_Image_m2byqwm2byqwm2by-ezremove_1785820122054.png';
+import romaBlack from '@assets/WhatsApp_Image_2025-08-09_at_21.29.56_f29baa99_1785820122055.jpg';
+import romaCherry from '@assets/WhatsApp_Image_2025-08-09_at_21.29.57_7ee5dd89_1785820122055.jpg';
+import romaBlue from '@assets/WhatsApp_Image_2025-08-09_at_21.29.57_36f9a98d_1785820122055.jpg';
+import romaWhite from '@assets/WhatsApp_Image_2025-08-09_at_21.29.57_c9239d05_1785820122056.jpg';
+import marsBlue from '@assets/WhatsApp_Image_2025-08-09_at_21.29.58_29d4ae02_1785820122056.jpg';
+import marsCherry from '@assets/WhatsApp_Image_2025-08-09_at_21.29.58_e7c7de67_1785820122056.jpg';
+import marsGrey from '@assets/WhatsApp_Image_2025-08-09_at_21.29.59_c19d44ff_1785820122056.jpg';
+import v5Grey from '@assets/WhatsApp_Image_2025-09-16_at_19.07.01_f4683566_1785820122057.jpg';
+import v5Rose from '@assets/WhatsApp_Image_2025-09-16_at_19.07.02_71fa1502_1785820122057.jpg';
+import v5Blue from '@assets/WhatsApp_Image_2025-09-16_at_19.07.02_e2f8b00c_1785820122057.jpg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -252,13 +264,69 @@ export default function Home() {
               <span className="bg-primary/10 text-primary p-2 rounded-lg"><Droplet className="h-6 w-6" /></span>
               Domestic RO Systems
             </h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                { name: "AquaPure Under-Counter", desc: "Space-saving design that fits perfectly under your kitchen sink. Multi-stage filtration for the whole family.", img: domestic1 },
-                { name: "Elegance Countertop", desc: "Sleek, modern aesthetic that complements any kitchen. Real-time TDS monitoring and smart alerts.", img: domestic2 }
-              ].map((product, i) => (
-                <ProductCard key={i} {...product} />
-              ))}
+
+            {/* Lexzon Series */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Lexzon Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6">
+                {[
+                  { name: "Lexzon BD-ALX-001", desc: "Compact wall-mount purifier in Metallic Cherry Red. LED indicator panel, premium cabinet design.", img: lexzonRed },
+                  { name: "Lexzon BD-ALX-101", desc: "Compact wall-mount purifier in Aqua Blue. LED indicator, transparent tank, elegant modern finish.", img: lexzonBlue }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Aqua Roma Series */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Aqua Roma Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { name: "Aqua Roma — Black", desc: "Smart LED technology, 100% food-grade ABS plastic. Sleek black finish for modern kitchens.", img: romaBlack },
+                  { name: "Aqua Roma — Cherry Silver", desc: "Bold cherry-silver dual-tone cabinet. Ultra purification with mineral retention.", img: romaCherry },
+                  { name: "Aqua Roma — Metallic Blue", desc: "Rich metallic blue finish. Best quality filter, ultra purification, retains minerals.", img: romaBlue },
+                  { name: "Aqua Roma — White", desc: "Clean white finish with chrome faucet. Smart LED indicators, food-grade ABS body.", img: romaWhite }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Aqua Mars Series */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Aqua Mars Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  { name: "Aqua Mars — Blue", desc: "9-litre detachable tank, Nile quality. Modern design with transparent storage tank.", img: marsBlue },
+                  { name: "Aqua Mars — Cherry", desc: "9-litre detachable tank in cherry finish. Compact and powerful for everyday home use.", img: marsCherry },
+                  { name: "Aqua Mars — Grey", desc: "9-litre detachable tank in slate grey. Minimalist modern design with reliable filtration.", img: marsGrey }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Aqua V5 Series */}
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Aqua V5 Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  { name: "Aqua V5 — Graphite", desc: "Next-gen purification with zinc, copper & alkaline technology. Smart digital panel.", img: v5Grey },
+                  { name: "Aqua V5 — Rose", desc: "Premium rose cabinet with zinc, copper & alkaline enrichment. Elegant home companion.", img: v5Rose },
+                  { name: "Aqua V5 — Sky Blue", desc: "Sky blue premium finish with advanced alkaline minerals. Next-level hydration at home.", img: v5Blue }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -464,12 +532,12 @@ function ProductCard({ name, desc, img }: { name: string, desc: string, img: str
       variants={fadeInUp}
       className="group relative rounded-2xl bg-white border shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
     >
-      <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
+      <div className="aspect-[3/4] w-full overflow-hidden bg-slate-50 relative">
         <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
         <img 
           src={img} 
           alt={name} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out p-2" 
         />
       </div>
       <div className="p-8 flex flex-col flex-1">
