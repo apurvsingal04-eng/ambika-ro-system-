@@ -459,7 +459,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {[
                   { name: "Industrial RO — 150 LPH", desc: "SS frame compact unit with 3 Big Blue filters, pressure gauge, flow meter and RO controller. Ideal for commercial kitchens and clinics.", img: indRo150 },
-                  { name: "Industrial RO — 200 LPH", desc: "Single FRP media filter with Innocontrol digital panel, reject & product flow meters, high-pressure vertical pump. Suitable for small industries.", img: indRo200 },
+                  { name: "Industrial RO — 250 LPH", desc: "Single FRP media filter with Innocontrol digital panel, reject & product flow meters, high-pressure vertical pump. Suitable for small industries.", img: indRo200 },
                   { name: "Industrial RO — 500 LPH", desc: "Seazen S5 Series with single FRP tank, Astral piping, digital RO controller. Pressure out/in gauges, suitable for pharma and food industry.", img: indRo500 },
                   { name: "Industrial RO — 1000 LPH", desc: "Seazen S7 dual FRP pre-filter tanks, Big Blue cartridge filters, SS frame. Digital panel controller with reject/product flow meters.", img: indRo1000 },
                   { name: "Industrial RO — 1500 LPH", desc: "Dual FRP media filters with Big Blue pre-filter, high-efficiency vertical pump, digital control panel with reject & product flow indicators.", img: indRo1500 },
