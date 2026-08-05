@@ -7,9 +7,16 @@ import {
 import { Button } from '@/components/ui/button';
 
 // Asset Imports
-import heroImg from '@assets/hero.jpg';
 import commercial1 from '@assets/download_1785901665028.jpg';
 import commercial2 from '@assets/download_(1)_1785901665027.jpg';
+
+// Industrial — RO Plants (real photos)
+import indRo1 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.43_AM_(1)_1785902834813.jpeg';
+import indRo2 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.42_AM_(1)_1785902839223.jpeg';
+import indRo3 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.43_AM_1785902848123.jpeg';
+import indRo4 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.42_AM_1785902853200.jpeg';
+import indRo5 from '@assets/WhatsApp_Image_2026-08-03_at_10.08.17_AM_(3)_1785903060592.jpeg';
+import indRo6 from '@assets/Gemini_Generated_Image_8amxz28amxz28amx_(1)_1785903318775.png';
 
 // Industrial — DM Plants
 import dmPlantSmall from '@assets/WhatsApp_Image_2026-08-03_at_10.13.02_AM_1785901872519.jpeg';
@@ -18,12 +25,12 @@ import dmPlantLarge from '@assets/WhatsApp_Image_2026-08-03_at_10.14.36_AM_(1)_1
 // Industrial — Softeners
 import softener from '@assets/WhatsApp_Image_2026-08-03_at_10.13.43_AM_1785902220033.jpeg';
 import softenerBag from '@assets/Screenshot_(202)_1785902151562.png';
-import industrial1 from '@assets/industrial-1.jpg';
-import industrial2 from '@assets/industrial-2.jpg';
 
 // Real product images — Domestic
 import lexzonRed from '@assets/Gemini_Generated_Image_4knxny4knxny4knx_1785820122053.png';
 import lexzonBlue from '@assets/Gemini_Generated_Image_m2byqwm2byqwm2by-ezremove_1785820122054.png';
+import lexzonGrey from '@assets/Gemini_Generated_Image_z6gyvtz6gyvtz6gy_1785902574306.png';
+import lexzonMetallicBlue from '@assets/Gemini_Generated_Image_n8tpgjn8tpgjn8tp_1785902619626.png';
 import romaBlack from '@assets/WhatsApp_Image_2025-08-09_at_21.29.56_f29baa99_1785820122055.jpg';
 import romaCherry from '@assets/WhatsApp_Image_2025-08-09_at_21.29.57_7ee5dd89_1785820122055.jpg';
 import romaBlue from '@assets/WhatsApp_Image_2025-08-09_at_21.29.57_36f9a98d_1785820122055.jpg';
@@ -152,19 +159,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden">
-        {/* Background image */}
+        {/* Dark water background — pure CSS, no image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroImg} 
-            alt="Modern Water Treatment Facility" 
-            className="w-full h-full object-cover scale-105"
-            style={{ filter: 'saturate(1.2) brightness(0.75)' }}
-          />
-          {/* Multi-layer gradient for depth */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/65 to-slate-900/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/30" />
-          {/* Blue water tint overlay */}
-          <div className="absolute inset-0 bg-blue-950/20" />
+          {/* Deep black-navy base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-blue-950" />
+          {/* Radial water glow, centre-right */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 65% 45%, rgba(14,116,144,0.18) 0%, transparent 70%)' }} />
+          {/* Top-left faint glow */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 40% 30% at 10% 20%, rgba(30,58,138,0.25) 0%, transparent 60%)' }} />
         </div>
 
         {/* Floating water-drop particles */}
@@ -326,10 +328,12 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
                 <span className="h-px w-6 bg-primary inline-block"></span>Lexzon Series
               </p>
-              <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {[
                   { name: "Lexzon BD-ALX-001", desc: "Compact wall-mount purifier in Metallic Cherry Red. LED indicator panel, premium cabinet design.", img: lexzonRed },
-                  { name: "Lexzon BD-ALX-101", desc: "Compact wall-mount purifier in Aqua Blue. LED indicator, transparent tank, elegant modern finish.", img: lexzonBlue }
+                  { name: "Lexzon BD-ALX-101", desc: "Compact wall-mount purifier in Aqua Blue. LED indicator, transparent tank, elegant modern finish.", img: lexzonBlue },
+                  { name: "Lexzon BD-ALX-003", desc: "Compact design in Metallic Grey with aqua transparent tank. LED indicator, premium food-grade ABS cabinet.", img: lexzonGrey },
+                  { name: "Lexzon BD-ALX-002", desc: "Compact design in Metallic Blue with smoked transparent tank. LED indicator, sleek modern finish.", img: lexzonMetallicBlue }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
@@ -447,10 +451,14 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
                 <span className="h-px w-6 bg-primary inline-block"></span>Industrial RO Plants
               </p>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {[
-                  { name: "Titan Plant 500LPH", desc: "Robust industrial-grade system for manufacturing units. Fully automated with PLC control panel.", img: industrial1 },
-                  { name: "MegaFlow 2000LPH+", desc: "Massive scale water treatment facility. Custom-engineered for specific factory requirements.", img: industrial2 }
+                  { name: "Industrial RO — 250 LPH", desc: "FRP pre-filter tank with Innocontrol panel, UV stage, vertical high-pressure pump. Fully automated with flow indicators.", img: indRo1 },
+                  { name: "Industrial RO — 500 LPH", desc: "Seazen dual FRP pre-filter tanks, Big Blue cartridge filters, SS frame. Digital panel controller with reject/product flow meters.", img: indRo2 },
+                  { name: "Industrial RO — 500 LPH SS", desc: "Seazen SS Series with single FRP tank, Astral piping, digital RO controller. Pressure out/in gauges, suitable for pharma and food industry.", img: indRo3 },
+                  { name: "Industrial RO — 1000 LPH", desc: "Dual FRP media filters with Big Blue pre-filter, high-efficiency vertical pump, digital control panel with reject & product flow indicators.", img: indRo4 },
+                  { name: "Industrial RO — Compact 100 LPH", desc: "SS frame compact unit with 3 Big Blue filters, pressure gauge, flow meter and RO controller. Ideal for commercial kitchens and clinics.", img: indRo5 },
+                  { name: "Industrial RO — 1000 LPH Plus", desc: "Dual FRP media filter tanks on SS skid with Big Blue pre-filters, vertical pump, pressure gauges. Custom-engineered for factories.", img: indRo6 }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
@@ -603,6 +611,8 @@ export default function Home() {
 }
 
 function ProductCard({ name, desc, img }: { name: string, desc: string, img: string }) {
+  const waMsg = encodeURIComponent(`Hi, I'm interested in a quote for: ${name}`);
+  const waUrl = `https://wa.me/919714727999?text=${waMsg}`;
   return (
     <motion.div 
       variants={fadeInUp}
@@ -619,9 +629,18 @@ function ProductCard({ name, desc, img }: { name: string, desc: string, img: str
       <div className="p-8 flex flex-col flex-1">
         <h4 className="text-xl font-bold text-slate-900 mb-3">{name}</h4>
         <p className="text-slate-600 mb-8 flex-1">{desc}</p>
-        <Button className="w-full group-hover:bg-primary/90" variant="outline" data-testid={`btn-quote-${name.replace(/\s+/g, '-').toLowerCase()}`}>
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noreferrer"
+          data-testid={`btn-quote-${name.replace(/\s+/g, '-').toLowerCase()}`}
+          className="w-full inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-semibold text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors group-hover:bg-green-50 group-hover:border-green-400 group-hover:text-green-700"
+        >
+          <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
           Request Quote
-        </Button>
+        </a>
       </div>
     </motion.div>
   );
