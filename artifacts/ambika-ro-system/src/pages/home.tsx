@@ -53,6 +53,12 @@ import dolphinGold from '@assets/WhatsApp_Image_2026-08-03_at_10.09.15_AM_178582
 import dolphinMetallicMaroon from '@assets/WhatsApp_Image_2026-08-03_at_10.09.16_AM_(1)_1785820315793.jpeg';
 import dolphinMetallicBlack from '@assets/WhatsApp_Image_2026-08-03_at_10.09.16_AM_1785820322997.jpeg';
 
+// Aqua Mars — Black (new)
+import marsBlack from '@assets/WhatsApp_Image_2026-08-03_at_4.35.06_PM_1785903979819.jpeg';
+
+// Industrial RO — 500 LPH removebg photo
+import seazen500bg from '@assets/WhatsApp_Image_2026-08-05_at_9.32.42_AM__1_-removebg-preview_1785903936870.png';
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -323,6 +329,22 @@ export default function Home() {
               Domestic RO Systems
             </h3>
 
+            {/* Dolphin Series */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Dolphin Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  { name: "Dolphin Gold+", desc: "ISO 9001 certified. 9-litre compact RO system. Pure, healthy, safe & sweet drinking water with balanced minerals.", img: dolphinGold },
+                  { name: "Dolphin Metallic — Maroon", desc: "Nile certified reverse osmosis system. 100% pure water guarantee, quality water for quality life.", img: dolphinMetallicMaroon },
+                  { name: "Dolphin Metallic — Black", desc: "Built-in high capacity booster pump. Removes hardness & improves taste. Dust and insect proof body.", img: dolphinMetallicBlack }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
             {/* Lexzon Series */}
             <div className="mb-12">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
@@ -334,6 +356,22 @@ export default function Home() {
                   { name: "Lexzon BD-ALX-101", desc: "Compact wall-mount purifier in Aqua Blue. LED indicator, transparent tank, elegant modern finish.", img: lexzonBlue },
                   { name: "Lexzon BD-ALX-003", desc: "Compact design in Metallic Grey with aqua transparent tank. LED indicator, premium food-grade ABS cabinet.", img: lexzonGrey },
                   { name: "Lexzon BD-ALX-002", desc: "Compact design in Metallic Blue with smoked transparent tank. LED indicator, sleek modern finish.", img: lexzonMetallicBlue }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Aqua Mars Series */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Aqua Mars Series
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  { name: "Aqua Mars — Blue", desc: "9-litre detachable tank, Nile quality. Modern design with transparent storage tank.", img: marsBlue },
+                  { name: "Aqua Mars — Grey", desc: "9-litre detachable tank in slate grey. Minimalist modern design with reliable filtration.", img: marsGrey },
+                  { name: "Aqua Mars — Black", desc: "9-litre detachable tank in bold black finish. Modern design, 100% pure water, ideal for contemporary homes.", img: marsBlack }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
@@ -357,22 +395,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Aqua Mars Series */}
-            <div className="mb-12">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
-                <span className="h-px w-6 bg-primary inline-block"></span>Aqua Mars Series
-              </p>
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {[
-                  { name: "Aqua Mars — Blue", desc: "9-litre detachable tank, Nile quality. Modern design with transparent storage tank.", img: marsBlue },
-                  { name: "Aqua Mars — Cherry", desc: "9-litre detachable tank in cherry finish. Compact and powerful for everyday home use.", img: marsCherry },
-                  { name: "Aqua Mars — Grey", desc: "9-litre detachable tank in slate grey. Minimalist modern design with reliable filtration.", img: marsGrey }
-                ].map((product, i) => (
-                  <ProductCard key={i} {...product} />
-                ))}
-              </div>
-            </div>
-
             {/* Aqua V5 Series */}
             <div className="mb-12">
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
@@ -390,32 +412,15 @@ export default function Home() {
             </div>
 
             {/* Aqua Nine Series */}
-            <div className="mb-12">
+            <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
                 <span className="h-px w-6 bg-primary inline-block"></span>Aqua Nine Series
               </p>
-              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {[
                   { name: "Aqua Nine N 901", desc: "Modern design with excellent graphics. Digital display, large 10-litre storage tank, heavy food-grade cabinet.", img: nineN901 },
                   { name: "Aqua Nine N 301", desc: "White cabinet with geometric graphic panel. LED display, invisible screw design, easy service access.", img: nineN301 },
-                  { name: "Aqua Nine N 302", desc: "White cabinet with vibrant leaf-water graphic. LED display, attractive chrome tap, 10-litre tank.", img: nineN302 },
-                  { name: "Aqua Nine — Full Range", desc: "Available in 4 variants: N301, N302, N901, N902. Modern design with excellent graphics across all models.", img: nineCatalog }
-                ].map((product, i) => (
-                  <ProductCard key={i} {...product} />
-                ))}
-              </div>
-            </div>
-
-            {/* Dolphin Series */}
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
-                <span className="h-px w-6 bg-primary inline-block"></span>Dolphin Series
-              </p>
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {[
-                  { name: "Dolphin Gold+", desc: "ISO 9001 certified. 9-litre compact RO system. Pure, healthy, safe & sweet drinking water with balanced minerals.", img: dolphinGold },
-                  { name: "Dolphin Metallic — Maroon", desc: "Nile certified reverse osmosis system. 100% pure water guarantee, quality water for quality life.", img: dolphinMetallicMaroon },
-                  { name: "Dolphin Metallic — Black", desc: "Built-in high capacity booster pump. Removes hardness & improves taste. Dust and insect proof body.", img: dolphinMetallicBlack }
+                  { name: "Aqua Nine N 302", desc: "White cabinet with vibrant leaf-water graphic. LED display, attractive chrome tap, 10-litre tank.", img: nineN302 }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
@@ -454,11 +459,11 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {[
                   { name: "Industrial RO — 250 LPH", desc: "FRP pre-filter tank with Innocontrol panel, UV stage, vertical high-pressure pump. Fully automated with flow indicators.", img: indRo1 },
-                  { name: "Industrial RO — 500 LPH", desc: "Seazen dual FRP pre-filter tanks, Big Blue cartridge filters, SS frame. Digital panel controller with reject/product flow meters.", img: indRo2 },
+                  { name: "Industrial RO — 1000 LPH", desc: "Seazen dual FRP pre-filter tanks, Big Blue cartridge filters, SS frame. Digital panel controller with reject/product flow meters.", img: seazen500bg },
                   { name: "Industrial RO — 500 LPH SS", desc: "Seazen SS Series with single FRP tank, Astral piping, digital RO controller. Pressure out/in gauges, suitable for pharma and food industry.", img: indRo3 },
-                  { name: "Industrial RO — 1000 LPH", desc: "Dual FRP media filters with Big Blue pre-filter, high-efficiency vertical pump, digital control panel with reject & product flow indicators.", img: indRo4 },
-                  { name: "Industrial RO — Compact 100 LPH", desc: "SS frame compact unit with 3 Big Blue filters, pressure gauge, flow meter and RO controller. Ideal for commercial kitchens and clinics.", img: indRo5 },
-                  { name: "Industrial RO — 1000 LPH Plus", desc: "Dual FRP media filter tanks on SS skid with Big Blue pre-filters, vertical pump, pressure gauges. Custom-engineered for factories.", img: indRo6 }
+                  { name: "Industrial RO — 1500 LPH", desc: "Dual FRP media filters with Big Blue pre-filter, high-efficiency vertical pump, digital control panel with reject & product flow indicators.", img: indRo4 },
+                  { name: "Industrial RO — 150 LPH", desc: "SS frame compact unit with 3 Big Blue filters, pressure gauge, flow meter and RO controller. Ideal for commercial kitchens and clinics.", img: indRo5 },
+                  { name: "Industrial RO — 2000 LPH", desc: "Dual FRP media filter tanks on SS skid with Big Blue pre-filters, vertical pump, pressure gauges. Custom-engineered for factories.", img: indRo6 }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
