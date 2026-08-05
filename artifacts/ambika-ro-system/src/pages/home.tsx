@@ -10,6 +10,14 @@ import { Button } from '@/components/ui/button';
 import heroImg from '@assets/hero.jpg';
 import commercial1 from '@assets/download_1785901665028.jpg';
 import commercial2 from '@assets/download_(1)_1785901665027.jpg';
+
+// Industrial — DM Plants
+import dmPlantSmall from '@assets/WhatsApp_Image_2026-08-03_at_10.13.02_AM_1785901872519.jpeg';
+import dmPlantLarge from '@assets/WhatsApp_Image_2026-08-03_at_10.14.36_AM_(1)_1785902294542.jpeg';
+
+// Industrial — Softeners
+import softener from '@assets/WhatsApp_Image_2026-08-03_at_10.13.43_AM_1785902220033.jpeg';
+import softenerBag from '@assets/Screenshot_(202)_1785902151562.png';
 import industrial1 from '@assets/industrial-1.jpg';
 import industrial2 from '@assets/industrial-2.jpg';
 
@@ -431,15 +439,52 @@ export default function Home() {
           <div>
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
               <span className="bg-primary/10 text-primary p-2 rounded-lg"><Wrench className="h-6 w-6" /></span>
-              Industrial RO Plants
+              Industrial Plants &amp; Special Systems
             </h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                { name: "Titan Plant 500LPH", desc: "Robust industrial-grade system for manufacturing units. Fully automated with PLC control panel.", img: industrial1 },
-                { name: "MegaFlow 2000LPH+", desc: "Massive scale water treatment facility. Custom-engineered for specific factory requirements.", img: industrial2 }
-              ].map((product, i) => (
-                <ProductCard key={i} {...product} />
-              ))}
+
+            {/* Industrial RO Plants */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Industrial RO Plants
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  { name: "Titan Plant 500LPH", desc: "Robust industrial-grade system for manufacturing units. Fully automated with PLC control panel.", img: industrial1 },
+                  { name: "MegaFlow 2000LPH+", desc: "Massive scale water treatment facility. Custom-engineered for specific factory requirements.", img: industrial2 }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* DM Plants */}
+            <div className="mb-12">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>DM Plants (Demineralisation)
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  { name: "DM Plant — Compact", desc: "Cation & Anion resin vessels with HCL and Caustic Soda dosing. Supertronics control panel. Ideal for labs and small industrial units.", img: dmPlantSmall },
+                  { name: "DM Plant — Heavy Duty", desc: "Large FRP Cation & Anion vessels on SS frame with pressure gauges and motorised pump. Removes all dissolved solids for zero-TDS output.", img: dmPlantLarge }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
+            </div>
+
+            {/* Water Softeners */}
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-5 flex items-center gap-2">
+                <span className="h-px w-6 bg-primary inline-block"></span>Water Softeners
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  { name: "Water Softener", desc: "FRP tank with automatic valve, salt absorption tube and brine tank. Removes hardness causing calcium & magnesium ions effectively.", img: softener },
+                  { name: "Softener with Bag Filter", desc: "Water softener system with integrated pre-filtration bag filter housing. Ideal for industries requiring both hardness removal and particulate filtration.", img: softenerBag }
+                ].map((product, i) => (
+                  <ProductCard key={i} {...product} />
+                ))}
+              </div>
             </div>
           </div>
 
