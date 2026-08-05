@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Droplet, ShieldCheck, Wrench,
-  MapPin, Phone, Mail, ChevronRight, Menu, X
+  MapPin, Phone, Mail, ChevronRight, ChevronDown, Menu, X
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // Asset Imports
 import heroImg from '@assets/hero.jpg';
-import commercial1 from '@assets/commercial-1.jpg';
-import commercial2 from '@assets/commercial-2.jpg';
+import commercial1 from '@assets/download_1785901665028.jpg';
+import commercial2 from '@assets/download_(1)_1785901665027.jpg';
 import industrial1 from '@assets/industrial-1.jpg';
 import industrial2 from '@assets/industrial-2.jpg';
 
@@ -143,14 +143,89 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-[100dvh] flex items-center pt-20">
+      <section id="home" className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden">
+        {/* Background image */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent z-10" />
           <img 
             src={heroImg} 
             alt="Modern Water Treatment Facility" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105"
+            style={{ filter: 'saturate(1.2) brightness(0.75)' }}
           />
+          {/* Multi-layer gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/65 to-slate-900/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/30" />
+          {/* Blue water tint overlay */}
+          <div className="absolute inset-0 bg-blue-950/20" />
+        </div>
+
+        {/* Floating water-drop particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-blue-400/20 backdrop-blur-sm border border-blue-300/20 z-10"
+            style={{
+              width: `${20 + i * 14}px`,
+              height: `${20 + i * 14}px`,
+              left: `${8 + i * 11}%`,
+              top: `${15 + (i % 4) * 18}%`,
+            }}
+            animate={{
+              y: [0, -18, 0],
+              opacity: [0.3, 0.7, 0.3],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 3 + i * 0.6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.4,
+            }}
+          />
+        ))}
+
+        {/* Animated water shimmer lines */}
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+          {[...Array(4)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent w-full"
+              style={{ top: `${25 + i * 18}%` }}
+              animate={{ x: ['-100%', '100%'] }}
+              transition={{
+                duration: 6 + i * 1.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 1.2,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Animated wave at the bottom */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden leading-none pointer-events-none" style={{ height: '120px' }}>
+          {/* Wave layer 1 — slower, foreground */}
+          <motion.div
+            className="absolute bottom-0"
+            style={{ width: '200%', height: '120px' }}
+            animate={{ x: [0, '-50%'] }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+          >
+            <svg viewBox="0 0 2880 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-full">
+              <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 C1680,100 1920,20 2160,60 C2400,100 2640,20 2880,60 L2880,120 L0,120 Z" fill="#f8fafc" />
+            </svg>
+          </motion.div>
+          {/* Wave layer 2 — faster, semi-transparent */}
+          <motion.div
+            className="absolute bottom-0"
+            style={{ width: '200%', height: '120px' }}
+            animate={{ x: ['-50%', 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'linear' }}
+          >
+            <svg viewBox="0 0 2880 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-full">
+              <path d="M0,80 C360,30 720,110 1080,65 C1440,20 1800,100 2160,65 C2520,30 2760,90 2880,80 L2880,120 L0,120 Z" fill="#f8fafc" fillOpacity="0.45" />
+            </svg>
+          </motion.div>
         </div>
         
         <div className="container mx-auto px-4 md:px-6 relative z-20">
@@ -180,7 +255,7 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-              <Button size="lg" className="h-14 px-8 text-base font-semibold" onClick={() => scrollTo('products')} data-testid="hero-cta-products">
+              <Button size="lg" className="h-14 px-8 text-base font-semibold shadow-lg shadow-primary/40" onClick={() => scrollTo('products')} data-testid="hero-cta-products">
                 View Our Products
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8 text-base font-semibold text-white border-white/30 hover:bg-white/10 hover:text-white" onClick={() => scrollTo('contact')} data-testid="hero-cta-contact">
@@ -189,6 +264,23 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Scroll-down indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.6, duration: 0.6 }}
+          className="absolute bottom-36 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 cursor-pointer"
+          onClick={() => scrollTo('products')}
+        >
+          <span className="text-white/60 text-xs font-semibold tracking-[0.2em] uppercase">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown className="h-6 w-6 text-cyan-300 drop-shadow-lg" />
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Products Section */}
@@ -403,8 +495,8 @@ export default function Home() {
                   <div>
                     <h4 className="text-lg font-bold text-slate-900 mb-1">Call Us</h4>
                     <p className="text-slate-600">Sales & Support</p>
-                    <a href="tel:+919876543210" className="text-lg font-semibold text-primary hover:underline">
-                      +91 98765 43210
+                    <a href="tel:+919714727999" className="text-lg font-semibold text-primary hover:underline">
+                      +91 97147 27999
                     </a>
                   </div>
                 </div>
@@ -416,8 +508,8 @@ export default function Home() {
                   <div>
                     <h4 className="text-lg font-bold text-slate-900 mb-1">Email Us</h4>
                     <p className="text-slate-600">For quotations and inquiries</p>
-                    <a href="mailto:info@ambikarosystem.com" className="text-lg font-semibold text-primary hover:underline">
-                      info@ambikarosystem.com
+                    <a href="mailto:ambikaro841@gmail.com" className="text-lg font-semibold text-primary hover:underline">
+                      ambikaro841@gmail.com
                     </a>
                   </div>
                 </div>
