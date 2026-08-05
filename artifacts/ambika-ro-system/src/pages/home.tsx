@@ -10,13 +10,13 @@ import { Button } from '@/components/ui/button';
 import commercial1 from '@assets/download_1785901665028.jpg';
 import commercial2 from '@assets/download_(1)_1785901665027.jpg';
 
-// Industrial — RO Plants (real photos)
-import indRo1 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.43_AM_(1)_1785902834813.jpeg';
-import indRo2 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.42_AM_(1)_1785902839223.jpeg';
-import indRo3 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.43_AM_1785902848123.jpeg';
-import indRo4 from '@assets/WhatsApp_Image_2026-08-05_at_9.32.42_AM_1785902853200.jpeg';
-import indRo5 from '@assets/WhatsApp_Image_2026-08-03_at_10.08.17_AM_(3)_1785903060592.jpeg';
-import indRo6 from '@assets/Gemini_Generated_Image_8amxz28amxz28amx_(1)_1785903318775.png';
+// Industrial — RO Plants (real photos, sorted 150→2000 LPH)
+import indRo150 from '@assets/WhatsApp_Image_2026-08-03_at_10.08.17_AM_(1)_1785922292720.png';
+import indRo200 from '@assets/image-0_(3)_1785922580345.png';
+import indRo500 from '@assets/image-0_(1)_1785922419719.png';
+import indRo1000 from '@assets/image-0_1785922290820.png';
+import indRo1500 from '@assets/image-0_(2)_1785922489374.png';
+import indRo2000 from '@assets/image-0_(4)_1785922693134.png';
 
 // Industrial — DM Plants
 import dmPlantSmall from '@assets/WhatsApp_Image_2026-08-03_at_10.13.02_AM_1785901872519.jpeg';
@@ -458,12 +458,12 @@ export default function Home() {
               </p>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {[
-                  { name: "Industrial RO — 250 LPH", desc: "FRP pre-filter tank with Innocontrol panel, UV stage, vertical high-pressure pump. Fully automated with flow indicators.", img: indRo1 },
-                  { name: "Industrial RO — 1000 LPH", desc: "Seazen dual FRP pre-filter tanks, Big Blue cartridge filters, SS frame. Digital panel controller with reject/product flow meters.", img: seazen500bg },
-                  { name: "Industrial RO — 500 LPH SS", desc: "Seazen SS Series with single FRP tank, Astral piping, digital RO controller. Pressure out/in gauges, suitable for pharma and food industry.", img: indRo3 },
-                  { name: "Industrial RO — 1500 LPH", desc: "Dual FRP media filters with Big Blue pre-filter, high-efficiency vertical pump, digital control panel with reject & product flow indicators.", img: indRo4 },
-                  { name: "Industrial RO — 150 LPH", desc: "SS frame compact unit with 3 Big Blue filters, pressure gauge, flow meter and RO controller. Ideal for commercial kitchens and clinics.", img: indRo5 },
-                  { name: "Industrial RO — 2000 LPH", desc: "Dual FRP media filter tanks on SS skid with Big Blue pre-filters, vertical pump, pressure gauges. Custom-engineered for factories.", img: indRo6 }
+                  { name: "Industrial RO — 150 LPH", desc: "SS frame compact unit with 3 Big Blue filters, pressure gauge, flow meter and RO controller. Ideal for commercial kitchens and clinics.", img: indRo150 },
+                  { name: "Industrial RO — 200 LPH", desc: "Single FRP media filter with Innocontrol digital panel, reject & product flow meters, high-pressure vertical pump. Suitable for small industries.", img: indRo200 },
+                  { name: "Industrial RO — 500 LPH", desc: "Seazen S5 Series with single FRP tank, Astral piping, digital RO controller. Pressure out/in gauges, suitable for pharma and food industry.", img: indRo500 },
+                  { name: "Industrial RO — 1000 LPH", desc: "Seazen S7 dual FRP pre-filter tanks, Big Blue cartridge filters, SS frame. Digital panel controller with reject/product flow meters.", img: indRo1000 },
+                  { name: "Industrial RO — 1500 LPH", desc: "Dual FRP media filters with Big Blue pre-filter, high-efficiency vertical pump, digital control panel with reject & product flow indicators.", img: indRo1500 },
+                  { name: "Industrial RO — 2000 LPH", desc: "Dual FRP media filter tanks on SS skid with Big Blue pre-filters, vertical pump, pressure gauges. Custom-engineered for large factories.", img: indRo2000 }
                 ].map((product, i) => (
                   <ProductCard key={i} {...product} />
                 ))}
