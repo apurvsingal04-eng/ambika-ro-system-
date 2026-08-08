@@ -4,7 +4,8 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 app.use(express.static(path.join(__dirname, 'artifacts/ambika-ro-system')));
-app.get('*', (req, res) => {
+
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'artifacts/ambika-ro-system', 'index.html'));
 });
 
